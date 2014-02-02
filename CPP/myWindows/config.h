@@ -24,10 +24,10 @@
 
   #endif /* !ENV_MACOSX && !ENV_BEOS */
 
-  #if !defined(ENV_BEOS)
+  #if !defined(ENV_BEOS) && !defined(__ANDROID__)
     #define ENV_HAVE_GETPASS
 
-    #if !defined(sun)
+    #if !defined(sun) && !defined(__ANDROID__)
       #define ENV_HAVE_TIMEGM
     #endif
 

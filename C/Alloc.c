@@ -191,10 +191,10 @@ size_t largePageMinimum()
 
     dir_hugetlbfs[0]=0;
 
-    fp = setmntent(filename,"r");
+    fp = NULL;
     if (fp)
     {
-      info = getmntent(fp);
+      info = NULL;
       while(info)
       {
 /*
@@ -209,9 +209,9 @@ size_t largePageMinimum()
           break;
         }
 
-        info = getmntent(fp);
+        info = NULL;
       }
-      endmntent(fp);
+      // endmntent(fp);
     }
 
     if (dir_hugetlbfs[0])
